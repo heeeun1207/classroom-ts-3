@@ -22,5 +22,14 @@ console.log(createElementone('div', {class: 'training', id: 'typescript'}));
 // key 변수는 for...in 루프에서 props 객체의 모든 속성을 반복하며 string 타입이다.
 // 반환값은 string 타입
 
+function createElementTwo(tagName: string, props: {[key:string]: string}): string {
+  let propsString="";
+  for (let key in props) { 
+    propsString += ` ${key}="${props[key]}"`;
+  }
+  return `<${tagName}${propsString}></${tagName}>`;
+}
+console.log(createElementTwo('li',{class: '연습하기', id: 'ts'}));
+
 
 
